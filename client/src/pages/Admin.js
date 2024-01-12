@@ -17,9 +17,7 @@ function Admin() {
     <main>
       <div className="container" style={{ textAlign: 'center' }}>
         <CarManagement />
-        
-        {/* Button to navigate to Home.js */}
-        <button onClick={goToHome}>Go to Admin</button>
+          <button  className="btn btn-info" onClick={goToHome}>Go to Admin</button>
       </div>
     </main>
   );

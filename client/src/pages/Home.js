@@ -168,7 +168,12 @@ function Home() {
     // Reset editCar state
     setEditCar(null);
   };
+  const navigate = useNavigate();
 
+  // Function to handle navigation to Home.js
+  const goToAdmin = () => {
+    navigate('/home'); // Use the path of Home.js here
+  };
   if (!cars || cars.length === 0) {
     return <div>Ni podatkov</div>;
   }
@@ -360,6 +365,7 @@ function Home() {
               </svg>{" "}
             </button>
           </div>
+          <button  className="btn btn-info" onClick={goToAdmin}>Go to Home</button>
         </div>
       </div>
     </main>
