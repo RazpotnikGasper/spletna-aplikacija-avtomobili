@@ -2,7 +2,7 @@
 FROM node as builder
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /app/
 
 # Copy package.json and package-lock.json to the working directory
 COPY package*.json ./

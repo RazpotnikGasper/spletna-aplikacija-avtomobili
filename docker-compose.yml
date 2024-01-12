@@ -8,9 +8,12 @@ services:
       - ./client:/client
     ports:
       - "3000:3000"
+      - "80:80"
     image: app:react
     container_name: react_container
-    command: npm start
+    depends_on:
+      - server
+    #command: npm start
     networks:
       - my_network
 
