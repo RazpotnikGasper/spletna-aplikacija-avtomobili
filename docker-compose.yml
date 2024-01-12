@@ -1,0 +1,51 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./client
+    volumes:
+      - ./client:/client
+    ports:
+      - "3000:3000"
+    image: app:react
+    container_name: react_container
+    command: npm start
+    networks:
+      - my_network
+
+  db:
+    image: mysql:8
+    container_name: mysql_container
+    environment:
+        MYSQL_ROOT_USER: root
+        MYSQL_ROOT_PASSWORD: Password
+        MYSQL_USER: "gapi"
+        MYSQL_PASSWORD: "Password"
+        MYSQL_ROOT_HOST: localhost
+        MYSQL_DATABASE: flaskreact
+    networks:
+      - my_network
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./flaskreact:/docker-entrypoint-initdb.d
+
+  server:
+    build:
+      context: ./server
+    volumes:
+      - ./server:/app
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+      - FLASK_APP=server.py
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true
