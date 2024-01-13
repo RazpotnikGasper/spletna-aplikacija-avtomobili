@@ -1,4 +1,4 @@
-# Spletna-aplikacija-avtomobili
+## Spletna-aplikacija-avtomobili
 
 # Description
 This application provides two different views to interact with the database. Users can filter, modify, or input data through these views.
@@ -13,11 +13,11 @@ This application provides two different views to interact with the database. Use
 Follow the steps below to set up and run the application locally.
 
 # Step 1: Clone the Repository
-git clone https://github.com/RazpotnikGasper/spletna-aplikacija-avtomobili.git
-cd spletna-aplikacija-avtomobili
+```git clone https://github.com/RazpotnikGasper/spletna-aplikacija-avtomobili.git```
+``cd spletna-aplikacija-avtomobili``
 
 # Step 2: Run docker-compose up in the directory 
-docker-compose up --build
+```docker-compose up --build ```
 
 # Step 3: Open Application in Web Browser
 on localhost:80
